@@ -10,7 +10,7 @@ import { QueueMailDto } from 'src/modules/queue-mail/queue-mail.dto';
 import { QueueMailService } from 'src/modules/queue-mail/queue-mail.service';
 
 import { BaseRepository } from 'typeorm-transactional-cls-hooked';
-import { User } from './entity/user.entity';
+import { UserEntity } from './entity/user.entity';
 import { ChangePasswordDto } from 'src/authentication/auth/dto';
 import { UserInterface } from 'src/authentication/common/interfaces';
 
@@ -18,8 +18,8 @@ import { UserInterface } from 'src/authentication/common/interfaces';
 export class UserService 
 {
   constructor(
-    @InjectRepository(User)
-    private usersRepository: BaseRepository<User>,
+    @InjectRepository(UserEntity)
+    private usersRepository: BaseRepository<UserEntity>,
     private readonly configService: ConfigService,
     private readonly queueMailService: QueueMailService,
   ) {}
